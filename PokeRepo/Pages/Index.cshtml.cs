@@ -1,14 +1,11 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PokeRepo.Api;
 using PokeRepo.Models;
 
 namespace PokeRepo.Pages
 {
     public class IndexModel : PageModel
     {
-        public Root Pokemon { get; set; }
-
+        public List<string> Pokemons { get; set; } = new();
         private readonly ILogger<IndexModel> _logger;
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -18,20 +15,19 @@ namespace PokeRepo.Pages
         public async Task OnGet()
         {
 
-            string pokemonName = "charizard";
-
-            try
+            foreach (PokemonName pokemon in Enum.GetValues(typeof(PokemonName)))
             {
-                Root result = await new ApiCaller().MakeCall($"/api/v2/pokemon/{pokemonName}");
-
-                Pokemon = result;
-
-            }
-            catch (Exception ex)
-            {
-
+                Pokemons.Add(pokemon.ToString());
             }
 
+            /*
+             * Läs alla namnen i enumen
+             * skapa en stärng-lista av dom som en property
+             * 
+             * I HTML:
+             * Loopa över stränglistan
+             * Skapa en länk för varje namn som går till /details med asp-route-PokemonName
+             */
         }
     }
 }

@@ -5,7 +5,12 @@
 }
 
 
-@if(Model.Pokemon != null)
+@if (Model.Pokemons != null)
 {
-    <h1>@Model.Pokemon.Name</h1>
+    <hr />
+    foreach(var pokemon in Model.Pokemons)
+    {
+        <a asp-page="Pokemons/Details/" asp-route-Pokemon="@pokemon">@pokemon</a>
+        <hr />
+    }
 }

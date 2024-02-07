@@ -16,6 +16,7 @@ namespace PokeRepo.Api
 
         public async Task<Root> MakeCall(string Url)
         {
+
             HttpResponseMessage response = await Client.GetAsync(Url);
             if (response.IsSuccessStatusCode)
             {

@@ -1,15 +1,22 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace PokeRepo.Models
 {
     public class Root
     {
-        public List<AbilityModel> Abilities { get; set; }
-        public List<Form> Forms { get; set; }
+        [Key]
+        [JsonProperty("id")]
         public int? Id { get; set; }
+        [JsonProperty("abilities")]
+        public List<AbilityModel> Abilities { get; set; }
+        [JsonProperty("location_area_encounters")]
         public string LocationAreaEncounters { get; set; }
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("type")]
         public List<TypeModel> Types { get; set; }
+        [JsonProperty("weight")]
         public int? Weight { get; set; }
 
         [JsonProperty("sprites")]
@@ -58,37 +65,15 @@ namespace PokeRepo.Models
         public string Name { get; set; }
     }
 
-    public class Form
-    {
-        [JsonProperty("name")]
-        public string Name { get; set; }
-    }
-
     public class AbilityModel
     {
+        [JsonProperty("ability")]
         public AbilityCore Ability { get; set; }
     }
 
     public class AbilityCore
     {
+        [JsonProperty("name")]
         public string Name { get; set; }
     }
-
-    //public class Form
-    //{
-    //    public string Name { get; set; }
-
-    //    public string Url { get; set; }
-    //}
-
-    //public class TypeModel
-    //{
-    //    public int? Slot { get; set; }
-    //    public TypeCore Type { get; set; }
-    //}
-
-    //public class TypeCore
-    //{
-    //    string 
-    //}
 }

@@ -1,0 +1,16 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+@if (Model.Pokemons != null)
+{
+    <hr />
+    foreach (var pokemon in Model.Pokemons)
+    {
+        <a asp-page="Details/" asp-route-pokemonname="@pokemon">@pokemon</a>
+        <hr />
+    }
+}

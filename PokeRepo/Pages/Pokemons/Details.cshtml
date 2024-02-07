@@ -10,7 +10,6 @@
     <img src="@Model.Pokemon.Sprites.FrontDefault" alt="Picture of @Model.Pokemon.Name" />
     <h3>Location: @Model.Pokemon.LocationAreaEncounters</h3>
     <h3>Weight: @Model.Pokemon.Weight</h3>
-    <h3>Form: </h3>
     <ul>
         @foreach (var form in Model.Pokemon.Forms)
         {
@@ -36,3 +35,4 @@ else
 {
     <h1>No data found. . .</h1>
 }
+<a class="btn btn-warning" asp-page="Index/">All Pokémons</a>

@@ -10,7 +10,7 @@
     <hr />
     foreach(var pokemon in Model.Pokemons)
     {
-        <a asp-page="Pokemons/Details/" asp-route-Pokemon="@pokemon">@pokemon</a>
+        <a asp-page="Pokemons/Details/" asp-route-pokemonname="@pokemon">@pokemon</a>
         <hr />
     }
 }

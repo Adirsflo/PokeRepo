@@ -3,7 +3,36 @@
 @{
 }
 
-<h1>@Model.Pokemon.Name</h1>
-<h3>@Model.Pokemon.Abilities</h3>
-<h3>@Model.Pokemon.Forms</h3>
-<h3>@Model.Pokemon.Types</h3>
+
+@if (Model.Pokemon != null)
+{
+    <h1>@Model.Pokemon.Name</h1>
+    <img src="@Model.Pokemon.Sprites.FrontDefault" alt="Picture of @Model.Pokemon.Name" />
+    <h3>Location: @Model.Pokemon.LocationAreaEncounters</h3>
+    <h3>Weight: @Model.Pokemon.Weight</h3>
+    <h3>Form: </h3>
+    <ul>
+        @foreach (var form in Model.Pokemon.Forms)
+        {
+            <li>@form.Name</li>
+        }
+    </ul>
+    <h3>Abilities: </h3>
+    <ul>
+    @foreach(var ability in Model.Pokemon.Abilities)
+    {
+        <li>@ability.Ability.Name</li>
+    }
+    </ul>
+    <h3>Type: </h3>
+    <ul>
+    @foreach(var type in Model.Pokemon.Types)
+    {
+        <li>@type.Type.Name</li>
+    }
+    </ul>
+}
+else
+{
+    <h1>No data found. . .</h1>
+}

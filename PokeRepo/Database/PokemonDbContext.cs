@@ -9,13 +9,9 @@ namespace PokeRepo.Database
         {
 
         }
-
-        public DbSet<Root> Roots { get; set; }
-        public DbSet<Sprites> Sprites { get; set; }
-        public DbSet<TypeModel> TypeModels { get; set; }
-        public DbSet<TypeCore> TypeCores { get; set; }
-        public DbSet<AbilityModel> AbilityModels { get; set; }
-        public DbSet<AbilityCore> AbilityCores { get; set; }
+        public DbSet<PokemonModel> Pokemons { get; set; }
+        public DbSet<AbilityModel> Abilities { get; set; }
+        public DbSet<TypeModel> Types { get; set; }
 
     }
 }

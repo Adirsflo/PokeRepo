@@ -10,12 +10,6 @@
     <img src="@Model.Pokemon.Sprites.FrontDefault" alt="Picture of @Model.Pokemon.Name" />
     <h3>Location: @Model.Pokemon.LocationAreaEncounters</h3>
     <h3>Weight: @Model.Pokemon.Weight</h3>
-    <ul>
-        @foreach (var form in Model.Pokemon.Forms)
-        {
-            <li>@form.Name</li>
-        }
-    </ul>
     <h3>Abilities: </h3>
     <ul>
     @foreach(var ability in Model.Pokemon.Abilities)

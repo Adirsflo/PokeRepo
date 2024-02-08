@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-string? connectionString = builder.Configuration.GetConnectionString("DbCOnnection");
+string? connectionString = builder.Configuration.GetConnectionString("DbConnection");
 builder.Services.AddDbContext<PokemonDbContext>(options => options.UseSqlServer(connectionString));
 
 var app = builder.Build();

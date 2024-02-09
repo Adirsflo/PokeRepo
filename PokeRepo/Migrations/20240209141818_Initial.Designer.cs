@@ -12,8 +12,8 @@ using PokeRepo.Database;
 namespace PokeRepo.Migrations
 {
     [DbContext(typeof(PokemonDbContext))]
-    [Migration("20240208152420_AddingAbilityAndType")]
-    partial class AddingAbilityAndType
+    [Migration("20240209141818_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,8 +38,7 @@ namespace PokeRepo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PokemonId")
-                        .HasColumnType("int")
-                        .HasColumnName("pokemon_id");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -89,8 +88,7 @@ namespace PokeRepo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PokemonId")
-                        .HasColumnType("int")
-                        .HasColumnName("pokemon_id");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

@@ -27,64 +27,64 @@ namespace PokeRepo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "AbilityModel",
+                name: "Abilities",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    pokemon_id = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_AbilityModel", x => x.Id);
+                    table.PrimaryKey("PK_Abilities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_AbilityModel_Pokemons_pokemon_id",
-                        column: x => x.pokemon_id,
+                        name: "FK_Abilities_Pokemons_PokemonId",
+                        column: x => x.PokemonId,
                         principalTable: "Pokemons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "TypeModel",
+                name: "Types",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    pokemon_id = table.Column<int>(type: "int", nullable: false)
+                    PokemonId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TypeModel", x => x.Id);
+                    table.PrimaryKey("PK_Types", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TypeModel_Pokemons_pokemon_id",
-                        column: x => x.pokemon_id,
+                        name: "FK_Types_Pokemons_PokemonId",
+                        column: x => x.PokemonId,
                         principalTable: "Pokemons",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_AbilityModel_pokemon_id",
-                table: "AbilityModel",
-                column: "pokemon_id");
+                name: "IX_Abilities_PokemonId",
+                table: "Abilities",
+                column: "PokemonId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TypeModel_pokemon_id",
-                table: "TypeModel",
-                column: "pokemon_id");
+                name: "IX_Types_PokemonId",
+                table: "Types",
+                column: "PokemonId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "AbilityModel");
+                name: "Abilities");
 
             migrationBuilder.DropTable(
-                name: "TypeModel");
+                name: "Types");
 
             migrationBuilder.DropTable(
                 name: "Pokemons");

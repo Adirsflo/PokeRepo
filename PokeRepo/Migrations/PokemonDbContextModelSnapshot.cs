@@ -35,8 +35,7 @@ namespace PokeRepo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PokemonId")
-                        .HasColumnType("int")
-                        .HasColumnName("pokemon_id");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -86,8 +85,7 @@ namespace PokeRepo.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PokemonId")
-                        .HasColumnType("int")
-                        .HasColumnName("pokemon_id");
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

@@ -19,15 +19,6 @@ namespace PokeRepo.Pages.Pokemons
             {
                 Pokemons.Add(pokemon.ToString());
             }
-
-            /*
-             * Läs alla namnen i enumen
-             * skapa en stärng-lista av dom som en property
-             * 
-             * I HTML:
-             * Loopa över stränglistan
-             * Skapa en länk för varje namn som går till /details med asp-route-PokemonName
-             */
         }
     }
 }

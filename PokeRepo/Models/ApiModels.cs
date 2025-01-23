@@ -7,7 +7,13 @@
         public int? Id { get; set; }
         public string LocationAreaEncounters { get; set; }
         public string Name { get; set; }
+<<<<<<< Updated upstream
         public List<Type> Types { get; set; }
+=======
+        [JsonProperty("types")]
+        public List<TypeModel> Types { get; set; }
+        [JsonProperty("weight")]
+>>>>>>> Stashed changes
         public int? Weight { get; set; }
     }
 
